@@ -1,20 +1,34 @@
 $(document).ready(function() {
   hello.on('auth.login', function(auth) {
+    $('#login').fadeOut('fast');
+    window.FruumData = window.FruumData || [];
+    //get basic info
     hello(auth.network).api('/me').then(function(r) {
-      window.FruumData = window.FruumData || [];
-      window.FruumData.push({
-        user: {
-          network: auth.network,
-          id: r.id,
-          username: r.login || r.name,
-          displayname: r.displayName || r.name,
-          email: r.email || '',
-          avatar: r.thumbnail
-        }
-      });
-      $('#login').fadeOut('fast');
-      if (window.Fruum && window.Fruum.launch) {
-        window.Fruum.launch();
+      var user_payload = {
+        network: auth.network,
+        id: r.id,
+        username: r.login || r.name,
+        displayname: r.displayName || r.name,
+        email: r.email || '',
+        avatar: r.thumbnail
+      }
+      if (!r.email && auth.network === 'github') {
+        //try to get email
+        hello(auth.network).api('/user/emails').then(function(r2) {
+          if (r2 && r2.data && r2.data.length) {
+            _.each(r2.data, function(entry) {
+              if (entry.email && entry.primary) {
+                user_payload.email = entry.email;
+              }
+            });
+          }
+          window.FruumData.push({ user: user_payload });
+          if (window.Fruum && window.Fruum.launch) window.Fruum.launch();
+        });
+      }
+      else {
+        window.FruumData.push({ user: user_payload });
+        if (window.Fruum && window.Fruum.launch) window.Fruum.launch();
       }
     });
   });
