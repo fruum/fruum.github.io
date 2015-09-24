@@ -125,6 +125,14 @@ section {
   text-transform: uppercase;
 }
 
+.mainmenu {
+  position: relative;
+  height: 100%;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
 .menuitem a {
   display: block;
   color: #fff;
@@ -288,6 +296,19 @@ h2.main-descriptor {
   height: 90px;
 }
 
+
+
+#forum {
+  position: relative;
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 0;
+}
+
+#forum-container {
+  height: 100%;
+  width: 100%;
+}
 
 
 

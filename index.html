@@ -52,7 +52,7 @@
         if (window.location.host == host)
           script.src = 'https://fruum.herokuapp.com/loader.js?app_id=' + app_id;
         else
-          script.src = 'http://127.0.0.1:3000/loader.js?app_id=' + app_id;
+          script.src = 'http://192.168.1.105:3000/loader.js?app_id=' + app_id;
         (document.head || document.getElementsByTagName("head")[0]).appendChild(script);
       })();
     </script>
@@ -61,6 +61,11 @@
     <header>
       <div class="container">
         <a href="#home" class="logo" id="homeclick"></a>
+        <ul class="mainmenu">
+          <li class="menuitem">
+            <a href="forum.html">Forum page</a>
+          </li>
+        </ul>
         <a href="https://github.com/fruum/fruum" class="menu-right"><span class="main-link">View on github</span></a>
       </div>
     </header>
@@ -74,6 +79,10 @@
         or <a href="javascript:login();" class="main-cta-textlink">login to take some action</a>.
       </div>
       <a href="#features" class="home-next"><i class="fa fa-angle-double-down"></i></a>
+    </section>
+    <section id="explanation">
+      <div class="container">
+      </div>
     </section>
     <section id="description">
       <div class="container">
