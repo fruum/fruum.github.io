@@ -24,7 +24,7 @@ header {
   display: block;
   top: 0;
   width: 100%;
-  height: 80px;
+  height: 52px;
   z-index: 1;
   background-color: #181818;
 }
@@ -49,15 +49,16 @@ section {
 
 #home {
   position: relative;
-  height: 100%;
-  background: url('images/fruum-hero-bg01.jpg') top right #F5003A no-repeat;
+  background: url('images/fruum-hero-bg01.jpg') 20% right #F5003A no-repeat;
   background-size: cover;
   color: #fff;
   padding-bottom: 0;
+  padding-top: 0;
 }
 
 #home > .container {
-  padding-top: 5%;
+  padding-top: 62px;
+  text-align: center;
 }
 
 #home h1 {
@@ -120,9 +121,19 @@ section {
 
 .menu-right {
   float: right;
-  margin-top: 30px;
+  margin-top: 6px;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.menu-right .main-link {
+
+  display: inline-block;
+  line-height: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
 }
 
 .mainmenu {
@@ -131,13 +142,18 @@ section {
   float: left;
   margin: 0;
   padding: 0;
+  list-style-type: none;
+}
+
+.menuitem {
+  float: left;
 }
 
 .menuitem a {
   display: block;
   color: #fff;
-  padding: 20px;
-  line-height: 40px;
+  padding: 0 20px;
+  line-height: 52px;
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: 0 0 2px rgba( 0, 0, 0, 0.2 );
@@ -154,21 +170,18 @@ section {
   position: relative;
   display: inline-block;
   text-decoration: none;
-  height: 66px;
-  line-height: 66px;
-  font-size: 25px;
   color: #F5003A;
   background-color: #fff;
-  padding: 0 35px;
-  text-align: center;
-  border-radius: 33px;
-  -webkit-border-radius: 33px;
-  -moz-border-radius: 33px;
-  opacity: 0.7;
+  margin-top: 6px;
+  padding: 10px;
+  line-height: 20px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+
 }
 
 .main-cta-buttonlink:hover {
-  opacity: 1;
   box-shadow: 0 0 10px rgba( 255, 255, 255, 0.8 );
 }
 
@@ -181,6 +194,152 @@ section {
   color: #fff;
 }
 
+
+
+#explanation .container {
+  text-align: center;
+}
+
+#explanation h3 {
+  font-family: Arial;
+  font-size: 18px;
+  line-height: 24px;
+  color: #777;
+}
+
+#explanation .explanation-window {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  width: 920px;
+  height: 417px;
+  max-height: 56.26%;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px solid #BDBDBD;
+  background-color: #FFF;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#explanation .explanation-bar {
+  position: relative;
+  height: 5%;
+  width: 100%;
+  background-color: #BDBDBD;
+}
+
+#explanation .explanation-dot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  top: 50%;
+  float: right;
+  margin-right: 12px;
+  background-color: rgba( 255, 255, 255, 0.8 );
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+#explanation .explanation-main-content {
+  position: relative;
+  width: 95%;
+  height: 93%;
+  margin-left: 2.5%;
+  margin-top: 2%;
+  overflow: hidden;
+  text-align: left;
+  color: #D7D7D7;
+}
+
+#explanation .explanation-sitetitle {
+  font-size: 20px;
+  float: left;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+#explanation .explanation-actionsright {
+  float: right;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#explanation .explanation-divider {
+  position: relative;
+  display: block;
+  clear: both;
+  width: 100%;
+  height: 1px;
+  margin: 30px 0 40px;
+  background-color: #D7D7D7;
+}
+
+#explanation .explanation-row {
+  width: 100%;
+  clear: both;
+}
+
+#explanation .explanation-block {
+  position: relative;
+  display: block;
+  background-color: #D7D7D7;
+  height: 130px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  color: #F4F4F4;
+  font-weight: bold;
+}
+
+#explanation .explanation-textarea {
+  position: relative;
+  display: block;
+}
+
+#explanation .explanation-textblock-header {
+  position: relative;
+  height: 30px;
+  margin-bottom: 30px;
+  background-color: #D7D7D7;
+}
+
+#explanation .explanation-textblock {
+  position: relative;
+  height: 10px;
+  margin-bottom: 10px;
+  background-color: #D7D7D7;
+}
+
+#explanation .explanation-fruumlink {
+  position: relative;
+  display: block;
+  height: 100%;
+  background-color: #ed003f;
+  width: 30px;
+}
+
+#explanation .explanation-fruum {
+  position: absolute;
+  z-index: 1;
+  height: 93%;
+  background-color: #ed003f;
+  bottom: 1%;
+  right: 0;
+  max-width: 30%;
+  width: 30%;
+}
+
+
+
+#description {
+  background-color: #1f1f1f;
+}
 
 
 a {
