@@ -49,7 +49,8 @@ section {
 
 #home {
   position: relative;
-  background: url('images/fruum-hero-bg01.jpg') 20% right #F5003A no-repeat;
+  background-color: #F5003A;
+  background: url('images/fruum-hero-bg01.jpg') 25% right #F5003A no-repeat;
   background-size: cover;
   color: #fff;
   padding-bottom: 0;
@@ -72,7 +73,7 @@ section {
 
 #home h3 {
   font-family: Arial;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 30px;
   font-weight: normal;
   text-shadow: 0 0 10px rgba( 255, 255, 255, 0.2 );
@@ -196,8 +197,10 @@ section {
 
 
 
+
 #explanation .container {
   text-align: center;
+  padding-bottom: 30px;
 }
 
 #explanation h3 {

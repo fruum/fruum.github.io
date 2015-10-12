@@ -22,7 +22,7 @@ $(document).ready(function() {
   function step1() {
     loggedin.css('opacity', 0);
     login.show();
-    marker.removeClass('explanation-markerclick');
+    marker.removeClass('explanation-marker-clicked');
     fruum.removeClass('explanation-fruumopen');
     fruum_actions.hide();
     fruum_items.hide();
@@ -36,12 +36,12 @@ $(document).ready(function() {
 
   //fruum panel opens and user reads the content
   function step2() {
-    marker.addClass('explanation-markerclick');
+    marker.addClass('explanation-marker-clicked');
     fruum.addClass('explanation-fruumopen');
 
     //move marker inside fruum window
     var fruum_position = position(fruum);
-    marker.delay(500).animate({
+    marker.delay(800).animate({
       left: fruum_position.left + fruum.width() / 2 + 'px',
       top: fruum_position.top + 20 + 'px'
     }, 1000, function() {
@@ -65,11 +65,11 @@ $(document).ready(function() {
   function step3() {
     var login_position = position(login);
     //scroll down marker
-    marker.animate({
+    marker.delay(700).animate({
       top: login_position.top + login.height() /2 + 'px',
       left: login_position.left + login.width() /2 + 'px',
     }, 1000, function() {
-      marker.addClass('explanation-markerclick');
+      marker.addClass('explanation-marker-clicked');
       loggedin.css('opacity', 1);
       login.hide();
       step4();
@@ -84,7 +84,7 @@ $(document).ready(function() {
       top: question_pos.top + question.height()/2 + 'px',
       left: question_pos.left + question.width()/2 + 'px'
     }, 2000, function() {
-      marker.addClass('explanation-markerclick');
+      marker.addClass('explanation-marker-clicked');
       fruum_actions.show();
       fruum.addClass('explanation-fruumopen');
       step5();
@@ -100,18 +100,18 @@ $(document).ready(function() {
       left: add_pos.left + add.width()/2 + 'px'
     }, 2000, function() {
       //show first message
-      fruum_items.eq(0).delay(200).slideDown();
+      fruum_items.eq(0).delay(200).show();
       marker.animate({
         top: fruum_pos.top + fruum.height()/2 + 'px',
         left: fruum_pos.left + fruum.width()/2 + 'px'
       }, 2000, function() {
-        fruum_items.eq(1).delay(200).slideDown();
+        fruum_items.eq(1).delay(200).fadeIn(100);
         //start over
-        setTimeout(step1, 1000);
+        setTimeout(step1, 2000);
       });
     });
   }
 
-  step1();
+  setTimeout(step1, 2700);
 
 });

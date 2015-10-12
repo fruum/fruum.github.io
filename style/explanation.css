@@ -8,8 +8,8 @@
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  border: 1px solid #E6E6E6;
-  background-color: #FFF;
+  border: 1px solid rgba( 255, 255, 255, 0.4 );
+  background-color: transparent;
   overflow: hidden;
   margin: 0 auto;
   transition: width 1s, height 1s;
@@ -23,7 +23,7 @@
   width: 100%;
   top: 0;
   bottom: auto;
-  background-color: #E6E6E6;
+  background-color: rgba( 255, 255, 255, 0.4 );
   transition: bottom 1s, top 1s;
   -moz-transition: bottom 1s, top 1s;
   -webkit-transition: bottom 1s, top 1s;
@@ -51,7 +51,7 @@
   margin-top: 2%;
   overflow: hidden;
   text-align: left;
-  color: #E6E6E6;
+  color: rgba( 255, 255, 255, 0.6 );
   transition: width 1s, height 1s;
   -moz-transition: width 1s, height 1s;
   -webkit-transition: width 1s, height 1s;
@@ -83,12 +83,12 @@
   width: 100%;
   height: 1px;
   margin: 30px 0 40px;
-  background-color: #E6E6E6;
+  background-color: rgba( 255, 255, 255, 0.2 );
 }
 
 #explanation .explanation-loggedin {
   position: relative;
-  color: #E6E6E6;
+  color: rgba( 255, 255, 255, 0.6 );
   font-size: 14px;
   line-height: 18px;
   height: 18px;
@@ -127,7 +127,7 @@
 #explanation .explanation-block {
   position: relative;
   display: block;
-  background-color: #E6E6E6;
+  background-color: rgba( 255, 255, 255, 0.6 );
   height: 130px;
   padding: 10px;
   margin-bottom: 30px;
@@ -147,14 +147,14 @@
   position: relative;
   height: 30px;
   margin-bottom: 30px;
-  background-color: #E6E6E6;
+  background-color: rgba( 255, 255, 255, 0.6 );
 }
 
 #explanation .explanation-textblock {
   position: relative;
   height: 10px;
   margin-bottom: 10px;
-  background-color: #E6E6E6;
+  background-color: rgba( 255, 255, 255, 0.6 );
 }
 
 #explanation .explanation-fruumlink {
@@ -169,7 +169,7 @@
   position: absolute;
   z-index: 1;
   height: 93%;
-  background-color: #ed003f;
+  background-color: #fff;
   bottom: 1%;
   right: 0;
   transition: width 1s;
@@ -187,13 +187,23 @@
   width: 30%;
 }
 
+#explanation .explanation-fruumclose {
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  color: #ed003f;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+}
+
 #explanation .explanation-fruumtitle {
   position: absolute;
   width: 100%;
   top: 20px;
   left: 0;
   padding: 0 4px;
-  color: #fab3c6;
+  color: #444;
   font-size: 12px;
   font-weight: bold;
   text-align: left;
@@ -228,7 +238,7 @@
 
 #explanation .explanation-fruumtext {
   font-size: 0.8em;
-  color: #fab3c6;
+  color: #666;
   padding-left: 3.3em;
 }
 
@@ -247,11 +257,12 @@
 
 #explanation .explanation-fruumactions > span:not(.explanation-avatar1) {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  font-size: 0.6667em;
+  width: 1.5em;
+  height: 1.5em;
   text-align: center;
-  background-color: rgba( 255, 255, 255, 0.9 );
-  color: #ed003f;
+  background-color: #ed003f;
+  color: #fff;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -259,7 +270,7 @@
 }
 
 #explanation .explanation-fruumactions > span.explanation-buttonhovered {
-  background-color: #fff;
+  background-color: #ed003f;
 }
 
 #explanation .explanation-fruumactions > span.explanation-avatar1 {
@@ -287,7 +298,7 @@
   position: absolute;
   width: 2px;
   height: 8px;
-  background-color: #111;
+  background-color: #222;
   transform: rotate(-25deg);
   -moz-transform: rotate(-25deg);
   -webkit-transform: rotate(-25deg);
@@ -302,11 +313,39 @@
   position: absolute;
   width: 0;
   height: 0;
-  top: -6px;
+  top: -8px;
   left: -3px;
-  border-bottom: 10px solid #111;
+  border-bottom: 14px solid #222;
   border-right: 4px dotted transparent;
   border-left: 4px dotted transparent;
+}
+
+#explanation .explanation-marker.explanation-marker-clicked:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: -10px;
+  background-color: rgba( 0, 0, 128, 0.2 );
+  border-radius: 50%;
+  moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -webkit-animation: expclicked 0.4s;
+  animation: expclicked 0.4s;
+}
+
+@-webkit-keyframes expclicked {
+  0%   {-webkit-transform: scale(1,1);}
+  50%  {-webkit-transform: scale(2,2);}
+  100% {-webkit-transform: scale(1,1);}
+}
+
+@keyframes expclicked {
+    0%   {-ms-transform: scale(1,1);transform: scale(1,1);}
+    50%  {-ms-transform: scale(2,2);transform: scale(2,2);}
+    100% {-ms-transform: scale(1,1);transform: scale(1,1);}
 }
 
 
@@ -389,5 +428,24 @@
 
   #explanation .explanation-marker:before {
     display: none;
+  }
+
+  #explanation .explanation-marker.explanation-marker-clicked:after { display: none; }
+
+  #explanation .explanation-marker.explanation-marker-clicked {
+    -webkit-animation: expclicked 0.6s infinite;
+    animation: expclicked 0.4s infinite;
+  }
+
+  @-webkit-keyframes expclicked {
+    0%   {-webkit-transform: scale(1);transform: scale(1);background-color: rgba( 0, 0, 0, 0.2);}
+    70%  {-webkit-transform: scale(1.3);transform: scale(1.3);background-color: rgba( 0, 0, 0, 0.6);}
+    100% {-webkit-transform: scale(1);transform: scale(1);background-color: rgba( 0, 0, 0, 0.2);}
+  }
+
+  @keyframes expclicked {
+    0%   {-ms-transform: scale(1);transform: scale(1);background-color: rgba( 0, 0, 0, 0.2);}
+    70%  {-ms-transform: scale(1.3);transform: scale(1.3);background-color: rgba( 0, 0, 0, 0.6);}
+    100% {-ms-transform: scale(1);transform: scale(1);background-color: rgba( 0, 0, 0, 0.2);}
   }
 }
