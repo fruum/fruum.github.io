@@ -128,13 +128,13 @@ section {
 }
 
 .menu-right .main-link {
-
+  margin-top: 7px;
   display: inline-block;
   line-height: 20px;
-  padding: 10px;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
+  padding: 3px 10px;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
 }
 
 .mainmenu {
@@ -173,8 +173,8 @@ section {
   text-decoration: none;
   color: #F5003A;
   background-color: #fff;
-  margin-top: 6px;
-  padding: 10px;
+  margin-top: 13px;
+  padding: 4px 10px;
   line-height: 20px;
   border-radius: 20px;
   -webkit-border-radius: 20px;
