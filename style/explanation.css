@@ -172,9 +172,6 @@
   background-color: #fff;
   bottom: 1%;
   right: 0;
-  transition: width 1s;
-  -moz-transition: width 1s;
-  -webkit-transition: width 1s;
   border-top-left-radius: 3px;
   -moz-border-top-left-radius: 3px;
   -webkit-border-top-left-radius: 3px;
