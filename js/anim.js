@@ -57,7 +57,7 @@ $(document).ready(function() {
     }, 1500, function() {
       //scroll down marker
       marker.animate({
-        top: fruum_position.top + fruum.height() * 0.75 + 'px'
+        top: fruum_position.top + fruum.height() / 2 + 'px'
       }, 2000, function() {
         //Go to X and close window
         marker.delay(800).animate({
@@ -119,7 +119,7 @@ $(document).ready(function() {
       }, 2000, function() {
         fruum_items.eq(2).delay(500).fadeIn(100);
         //start over
-        setTimeout(step1, 2700);
+        setTimeout(step1, 3000);
       });
     });
   }
