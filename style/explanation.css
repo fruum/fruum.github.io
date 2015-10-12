@@ -227,6 +227,11 @@
   overflow: hidden;
 }
 
+#explanation .explanation-fruumitem .explanation-textblock-header,
+#explanation .explanation-fruumitem .explanation-textblock {
+  background-color: #888;
+}
+
 #explanation .explanation-fruumitem .explanation-avatar1,
 #explanation .explanation-fruumitem .explanation-avatar2 {
   font-size: 1.1em;
@@ -244,6 +249,7 @@
 
 #explanation .explanation-fruumactions {
   position: absolute;
+  display: block;
   bottom: 0;
   width: 100%;
   min-width: 40px;
@@ -252,14 +258,16 @@
   font-size: 18px;
   line-height: 18px;
   text-align: left;
-  padding: 0 4px;
+  padding: 0;
 }
 
 #explanation .explanation-fruumactions > span:not(.explanation-avatar1) {
-  display: inline-block;
+  display: block;
+  float: left;
   font-size: 0.6667em;
   width: 1.5em;
   height: 1.5em;
+  margin: 0;
   text-align: center;
   background-color: #ed003f;
   color: #fff;
@@ -267,10 +275,6 @@
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   margin-left: 5px;
-}
-
-#explanation .explanation-fruumactions > span.explanation-buttonhovered {
-  background-color: #ed003f;
 }
 
 #explanation .explanation-fruumactions > span.explanation-avatar1 {
@@ -324,6 +328,7 @@
   content: '';
   position: absolute;
   display: block;
+  opacity: 0;
   width: 20px;
   height: 20px;
   top: -10px;
@@ -337,15 +342,15 @@
 }
 
 @-webkit-keyframes expclicked {
-  0%   {-webkit-transform: scale(1,1);}
-  50%  {-webkit-transform: scale(2,2);}
-  100% {-webkit-transform: scale(1,1);}
+  0%   {-webkit-transform: scale(1,1);opacity: 1;}
+  50%  {-webkit-transform: scale(2,2);opacity: 1;}
+  100% {-webkit-transform: scale(1,1);opacity: 0;}
 }
 
 @keyframes expclicked {
-    0%   {-ms-transform: scale(1,1);transform: scale(1,1);}
-    50%  {-ms-transform: scale(2,2);transform: scale(2,2);}
-    100% {-ms-transform: scale(1,1);transform: scale(1,1);}
+    0%   {-ms-transform: scale(1,1);transform: scale(1,1);opacity: 1;}
+    50%  {-ms-transform: scale(2,2);transform: scale(2,2);opacity: 1;}
+    100% {-ms-transform: scale(1,1);transform: scale(1,1);opacity: 0;}
 }
 
 

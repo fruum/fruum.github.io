@@ -33,7 +33,8 @@ $(document).ready(function() {
     marker.removeClass('explanation-marker-clicked');
     fruum.removeClass('explanation-fruumopen');
     fruum_actions.hide();
-    fruum_items.hide();
+    fruum_items.eq(1).hide();
+    fruum_items.eq(2).hide();
 
     var question_pos = position(question);
     marker.animate({
@@ -111,12 +112,12 @@ $(document).ready(function() {
     }, 2000, function() {
       click();
       //show first message
-      fruum_items.eq(0).delay(200).show();
+      fruum_items.eq(1).delay(200).show();
       marker.animate({
         top: fruum_pos.top + fruum.height()/2 + 'px',
         left: fruum_pos.left + fruum.width()/2 + 'px'
       }, 2000, function() {
-        fruum_items.eq(1).delay(500).fadeIn(100);
+        fruum_items.eq(2).delay(500).fadeIn(100);
         //start over
         setTimeout(step1, 2700);
       });
