@@ -167,11 +167,13 @@
 
 #explanation .explanation-fruum {
   position: absolute;
+  overflow: hidden;
   z-index: 1;
   height: 93%;
   background-color: #fff;
   bottom: 1%;
   right: 0;
+  width: 0;
   border-top-left-radius: 3px;
   -moz-border-top-left-radius: 3px;
   -webkit-border-top-left-radius: 3px;
@@ -196,6 +198,7 @@
 
 #explanation .explanation-fruumtitle {
   position: absolute;
+  min-width: 140px;
   width: 100%;
   top: 20px;
   left: 0;
@@ -208,6 +211,7 @@
 
 #explanation .explanation-fruumcontent {
   position: absolute;
+  min-width: 140px;
   width: 100%;
   top: 60px;
   left: 0;
@@ -220,6 +224,7 @@
   position: relative;
   clear: both;
   width: 100%;
+  min-width: 140px;
   margin-bottom: 1.5em;
   overflow: hidden;
 }
@@ -249,7 +254,7 @@
   display: block;
   bottom: 0;
   width: 100%;
-  min-width: 40px;
+  min-width: 140px;
   color: #fff;
   height: 20px;
   font-size: 18px;
