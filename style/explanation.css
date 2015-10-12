@@ -414,6 +414,10 @@
     width: 99%;
   }
 
+  #explanation .explanation-sitetitle {
+    font-size: 14px;
+  }
+
   #explanation .explanation-marker {
     width: 40px;
     height: 40px;
