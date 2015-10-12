@@ -3,7 +3,7 @@ $(document).ready(function() {
       marker = $('.explanation-marker:first'),
       fruum = $('.explanation-fruum:first'),
       fruum_actions = $('.explanation-fruumactions:first'),
-      fruum_items = $('.explanation-fruumitem'),
+      fruum_comments = $('.js-comment'),
       question = $('.explanation-fruumdot:first'),
       login = $('.explanation-login:first'),
       add = $('.explanation-add:first'),
@@ -26,15 +26,27 @@ $(document).ready(function() {
     }, 800);
   }
 
+  function open_panel(done) {
+    var width = $(window).width()<1024?'99%':'30%';
+    fruum.animate({
+      width: width
+    }, 1000, done);
+  }
+
+  function close_panel(done) {
+    fruum.animate({
+      width: '0%'
+    }, 1000, done);
+  }
+
   //cursor moves to question mark
   function step1() {
     loggedin.css('opacity', 0);
     login.show();
     marker.removeClass('explanation-marker-clicked');
-    fruum.removeClass('explanation-fruumopen');
+    fruum.stop(true,true).css('width', '0%');
     fruum_actions.hide();
-    fruum_items.eq(1).hide();
-    fruum_items.eq(2).hide();
+    fruum_comments.hide()
 
     var question_pos = position(question);
     marker.animate({
@@ -46,30 +58,29 @@ $(document).ready(function() {
   //fruum panel opens and user reads the content
   function step2() {
     click();
-    fruum.addClass('explanation-fruumopen');
-
-    //move marker inside fruum window
-    var fruum_position = position(fruum),
-        close_position = position(close);
-    marker.animate({
-      left: fruum_position.left + fruum.width() / 2 + 'px',
-      top: fruum_position.top + 20 + 'px'
-    }, 1500, function() {
-      //scroll down marker
+    open_panel(function() {
+      //move marker inside fruum window
+      var fruum_position = position(fruum);
       marker.animate({
-        top: fruum_position.top + fruum.height() / 2 + 'px'
-      }, 2000, function() {
-        //Go to X and close window
-        marker.delay(800).animate({
-          top: close_position.top + close.height() / 2 + 'px',
-          left: close_position.left + close.width() / 2 + 'px'
-        }, 1500, function() {
-          click();
-          fruum.removeClass('explanation-fruumopen');
-          step3();
+        left: fruum_position.left + fruum.width() / 2 + 'px',
+        top: fruum_position.top + 20 + 'px'
+      }, 1500, function() {
+        //scroll down marker
+        marker.animate({
+          top: fruum_position.top + fruum.height() / 2 + 'px'
+        }, 2000, function() {
+          var close_position = position(close);
+          //Go to X and close window
+          marker.delay(800).animate({
+            top: close_position.top + close.height() / 2 + 'px',
+            left: close_position.left + close.width() / 2 + 'px'
+          }, 1500, function() {
+            click();
+            close_panel(step3);
+          });
         });
       });
-    });
+    })
   }
 
   //login
@@ -95,31 +106,35 @@ $(document).ready(function() {
       top: question_pos.top + question.height()/2 + 'px',
       left: question_pos.left + question.width()/2 + 'px'
     }, 2000, function() {
-      fruum_actions.show();
-      fruum.addClass('explanation-fruumopen');
-      step5();
+      click();
+      open_panel(step5);
     });
   }
 
   //add thread
   function step5() {
-    click();
-    var add_pos = position(add),
-        fruum_pos = position(fruum);
-    marker.animate({
-      top: add_pos.top + add.height()/2 + 'px',
-      left: add_pos.left + add.width()/2 + 'px'
-    }, 2000, function() {
-      click();
-      //show first message
-      fruum_items.eq(1).delay(200).show();
+    fruum_actions.fadeIn(100, function() {
+      var add_pos = position(add);
       marker.animate({
-        top: fruum_pos.top + fruum.height()/2 + 'px',
-        left: fruum_pos.left + fruum.width()/2 + 'px'
+        top: add_pos.top + add.height()/2 + 'px',
+        left: add_pos.left + add.width()/2 + 'px'
       }, 2000, function() {
-        fruum_items.eq(2).delay(500).fadeIn(100);
-        //start over
-        setTimeout(step1, 3000);
+        click();
+        var fruum_pos = position(fruum);
+        //show first message
+        fruum_comments.eq(0).delay(200).show();
+        marker.animate({
+          top: fruum_pos.top + fruum.height()/2 + 'px',
+          left: fruum_pos.left + fruum.width()/2 + 'px'
+        }, 2000, function() {
+          fruum_comments.eq(1).delay(500).fadeIn(100);
+          //start over
+          setTimeout(function() {
+            close_panel(function() {
+              setTimeout(step1, 2000);
+            });
+          }, 3000);
+        });
       });
     });
   }
