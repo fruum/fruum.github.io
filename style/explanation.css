@@ -9,7 +9,7 @@
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.4 );
-  background-color: transparent;
+  background-color: rgba( 0, 0, 0, 0.13 );
   overflow: hidden;
   margin: 0 auto;
   transition: width 1s, height 1s;
@@ -169,17 +169,11 @@
   position: absolute;
   overflow: hidden;
   z-index: 1;
-  height: 93%;
+  height: 95%;
   background-color: #fff;
-  bottom: 1%;
+  bottom: 0;
   right: 0;
   width: 0;
-  border-top-left-radius: 3px;
-  -moz-border-top-left-radius: 3px;
-  -webkit-border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  -moz-border-bottom-left-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
 }
 
 #explanation .explanation-fruum.explanation-fruumopen {
@@ -411,8 +405,8 @@
 
   #explanation .explanation-fruum {
     height: auto;
-    bottom: 65px;
-    top: 35px;
+    bottom: 60px;
+    top: 30px;
   }
 
   #explanation .explanation-fruum.explanation-fruumopen {
