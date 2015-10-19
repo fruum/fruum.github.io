@@ -26,8 +26,11 @@ header {
   width: 100%;
   height: 52px;
   z-index: 1;
-  /*background-color: #181818;*/
   background-color: transparent;
+}
+
+body.forum-page header {
+  background-color: #292E33;
 }
 header + section {
   padding-top: 7%;
