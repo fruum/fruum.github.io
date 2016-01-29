@@ -7,7 +7,7 @@ $(document).ready(function() {
       var user_payload = {
         network: auth.network,
         id: r.id,
-        username: r.login || r.name,
+        username: (r.login || r.name).replace(' ', '_').toLowerCase(),
         displayname: r.displayName || r.name,
         email: r.email || '',
         avatar: r.thumbnail
