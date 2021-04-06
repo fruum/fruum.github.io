@@ -22,47 +22,11 @@
     <script type="text/javascript" src="js/hello.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/anim.js"></script>
-    <script type="text/javascript">
-      (function() {
-        var host = 'fruum.github.io';
-        if (window.location.host == host && window.location.protocol != "https:") {
-          window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
-          return;
-        }
-        window.fruumSettings = {
-          history: true,
-          login: 'javascript:login();'
-        }
-        var app_id = 'fruum';
-        //check for custom app_id
-        var fragment = window.location.href.split('#')[1];
-        if (fragment && fragment.indexOf('app:') == 0) {
-          app_id = fragment.substr(4);
-        }
-        var script = document.createElement("script")
-        script.type = "text/javascript";
-        if (window.location.host == host)
-          script.src = 'https://fruum.herokuapp.com/go/' + app_id;
-        else
-          script.src = 'http://127.0.0.1:3000/go/' + app_id;
-        (document.head || document.getElementsByTagName("head")[0]).appendChild(script);
-      })();
-    </script>
   </head>
   <body>
     <header>
       <div class="container">
         <a href="/" class="logo"></a>
-        <ul class="mainmenu">
-          <li class="menuitem">
-            <a href="javascript:;" fruum-link="*">
-              in action
-            </a>
-          </li>
-          <li class="menuitem">
-            <a href="forum.html">Forum</a>
-          </li>
-        </ul>
         <a href="https://github.com/fruum/fruum" class="menu-right">Project on github</a>
       </div>
     </header>
@@ -71,7 +35,7 @@
         <h1>Speed up communications between you and your users.</h1>
         <h3>Create your forum, documentation, and chat streams for your web application.<br>On your userbase, embeddable and real-time.</h3>
 
-        <a href="javascript:;" fruum-link="*" class="main-cta-buttonlink">Test it out</a>
+        <a href="https://github.com/fruum/fruum" class="main-cta-buttonlink">View on GitHub</a>
 
         <div id="explanation">
           <div class="container">
@@ -152,7 +116,7 @@
     <section id="description">
       <div class="container">
         <h2 class="main-descriptor">
-          Fruum is using <a href="https://nodejs.org" target="_blank">node.js</a> for the backend and <a href="https://www.elastic.co" target="_blank">elasticsearch</a> to store communication streams. If elasticsearch doesn't fit your needs you can <a href="javascript:;" fruum-link="home">create a plugin</a> for your case.
+          Fruum is using <a href="https://nodejs.org" target="_blank">node.js</a> for the backend and <a href="https://www.elastic.co" target="_blank">elasticsearch</a> to store communication streams. If elasticsearch doesn't fit your needs you can create a plugin for your case.
         </h2>
       </div>
     </section>
@@ -166,7 +130,6 @@
             <h4 class="feature-description">
               New posts, forum topics and chat messages are instantly available in real-time.
             </h4>
-            <a href="javascript:;" fruum-link="Sandbox" class="read-more main-link">Try it out!</a>
           </li>
           <li class="feature-item">
             <div class="feature-icon">
@@ -175,7 +138,6 @@
             <h4 class="feature-description">
               Flexible setup for your communication, by default supporting forum, chat and documentation.
             </h4>
-            <a href="javascript:;" fruum-link="Category-in-fruum-organise-and-customise-your-content" class="read-more">Read more</a>
           </li>
           <li class="feature-item">
             <div class="feature-icon">
@@ -184,7 +146,6 @@
             <h4 class="feature-description">
               No additional signup required, authentication binds to your existing userbase.
             </h4>
-            <a href="javascript:;" fruum-link="User-authentication" class="read-more">Read more</a>
           </li>
           <li class="feature-item">
             <div class="feature-icon">
@@ -193,7 +154,6 @@
             <h4 class="feature-description">
               Extend and hook using plugins and backend drivers.
             </h4>
-            <a href="javascript:;" fruum-link="advanced-topics" class="read-more">Read more</a>
           </li>
           <li class="feature-item">
             <div class="feature-icon">
@@ -202,7 +162,6 @@
             <h4 class="feature-description">
               Apply your web-app theme, overriding or extending the existing SASS based CSS.
             </h4>
-            <a href="javascript:;" fruum-link="theme-customization" class="read-more">Read more</a>
           </li>
           <li class="feature-item">
             <div class="feature-icon">
@@ -211,7 +170,6 @@
             <h4 class="feature-description">
               Fruum is open-source! Fork, clone or copy the existing codebase and don't forget to give back to the community!
             </h4>
-            <a href="https://github.com/fruum/fruum" class="read-more">View on github</a>
           </li>
         </ul>
       </div>
@@ -247,24 +205,8 @@
     <section id="final-promo">
       <div class="container">
         <h2 class="main-descriptor">
-          Want to find out more? Check out the project on <a href="https://github.com/fruum/fruum" class="main-link read-more">github</a> or <a href="javascript:;" fruum-link="Documentation" class="read-more">view the docs</a>.
+          Want to find out more? Check out the project on <a href="https://github.com/fruum/fruum" class="main-link read-more">github</a>.
         </h2>
-      </div>
-    </section>
-
-    <section id="login" style="display: none;">
-      <div class="popup-container">
-        <p>
-          This login is for your own testing delight and to help make Fruum better.
-        </p>
-        <h6>Login with your:</h6>
-        <a href="#" class="login-github" data-auth="github"><i class="fa fa-github"></i> Github account</a>
-        <a href="#" class="login-google" data-auth="google"><i class="fa fa-google"></i> Google account</a>
-        <br>
-        <p class="popup-disclaimer">
-          Your account avatar and username will be displayed in Fruum, you will also receive email notifications for topics you watch.
-        </p>
-        <a href="#" class="popup-close">close login</a>
       </div>
     </section>
 
